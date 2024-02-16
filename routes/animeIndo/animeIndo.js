@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
 const getRecentEpisode = async (req, res) => {
   try {
     const url = await axios.get(
-      `https://185.224.82.193/page/${req.params.page}/`,
+      `https://anime-indo.biz/page/${req.params.page}/`,
       {
         headers: {
           Accept: "application/json, text/plain, */*",
