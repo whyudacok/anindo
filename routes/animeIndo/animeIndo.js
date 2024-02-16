@@ -49,7 +49,7 @@ router.get("/recent/:page", getRecentEpisode);
 // Watch Anime Indo
 const watchAnime = async (req, res) => {
   try {
-    const url = await axios.get(`https://185.224.82.193/${req.params.name}/`, {
+    const url = await axios.get(`https://anime-indo.biz/${req.params.name}/`, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
@@ -91,7 +91,7 @@ router.get("/watch/:name", watchAnime);
 const getAnimeMovie = async (req, res) => {
   try {
     const url = await axios.get(
-      `https://185.224.82.193/movie/page/${req.params.page}/`,
+      `https://anime-indo.biz/movie/page/${req.params.page}/`,
       {
         headers: {
           "User-Agent":
@@ -137,7 +137,7 @@ router.get("/movie/:page", getAnimeMovie);
 const getAnimeSearch = async (req, res) => {
   try {
     const url = await axios.get(
-      `https://185.224.82.193/search/${req.params.name}/`,
+      `https://anime-indo.biz/search/${req.params.name}/`,
       {
         headers: {
           "User-Agent":
@@ -185,7 +185,7 @@ router.get("/search/:name", getAnimeSearch);
 
 const getPopularAnime = async (req, res) => {
   try {
-    const url = await axios.get(`https://185.224.82.193/`, {
+    const url = await axios.get(`https://anime-indo.biz/`, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
@@ -225,7 +225,7 @@ router.get("/popular", getPopularAnime);
 const getAnimeDetails = async (req, res) => {
   try {
     const url = await axios.get(
-      `https://185.224.82.193/anime/${req.params.animeid}/`,
+      `https://anime-indo.biz/anime/${req.params.animeid}/`,
       {
         headers: {
           "User-Agent":
