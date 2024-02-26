@@ -10,7 +10,7 @@ router.get('/', (req,res)=>{
 const getRecentEpisode = async (req, res) => {
   try {
     const { page } = req.params;
-    const url = await axios.get("https://otakudesu.su/?page=" + page || 1);
+    const url = await axios.get("https://otakudesu.cloud/?page=" + page || 1);
     const $ = await cheerio.load(url.data);
     console.log(page);
     const animeList = [];
@@ -49,7 +49,7 @@ router.get("/recent/:page", getRecentEpisode);
 const getTopAnime = async (req, res) => {
   try {
     const url = await axios.get(
-      "https://otakudesu.su/anime?status=&type=&order=popular"
+      "https://otakudesu.cloud/anime?status=&type=&order=popular"
     );
     const $ = await cheerio.load(url.data);
     const popular = [];
@@ -89,7 +89,7 @@ router.get("popular", getTopAnime);
 
 const getGenreAnime = async (req, res) => {
   try {
-    const url = await axios.get("https://otakudesu.su/genres");
+    const url = await axios.get("https://otakudesu.cloud/genres");
     const $ = await cheerio.load(url.data);
     const genres = [];
 
@@ -125,7 +125,7 @@ router.get("genre", getGenreAnime);
 const getGenreAnimeSearch = async (req, res) => {
   try {
     const url = await axios.get(
-      "https://otakudesu.su/genres/" + req.params.name
+      "https://otakudesu.cloud/genres/" + req.params.name
     );
     const $ = await cheerio.load(url.data);
     const genres = [];
@@ -166,7 +166,7 @@ router.get("/genre/:name", getGenreAnimeSearch);
 const getAnimeDetails = async (req, res) => {
   try {
     const url = await axios.get(
-      "https://otakudesu.su/anime/" + req.params.animeId
+      "https://otakudesu.cloud/anime/" + req.params.animeId
     );
     const $ = await cheerio.load(url.data);
 
